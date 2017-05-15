@@ -1,0 +1,19 @@
+<div class="container">
+<div class="jumbotron">
+  <h1>Album of the Day</h1>
+  <h4 *ngIf="auth.authenticated()">You are logged in</h4>
+    <h4 *ngIf="!auth.authenticated()">You are not logged in, please click 'Log in' button to login</h4>
+  <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+</div>
+<form [formGroup]="coolForm"> <input formControlName="search" placeholder="Search artist">
+		  <input (click)="search()" type="submit" value="Search For Artist"></form>
+
+
+
+        <div *ngFor ="let artist of result">
+         <h3> {{artist.name}}</h3>
+         <img src="{{artist.image[2]['#text']}}" />
+         </div>
+<router-outlet></router-outlet>
+
+</div>

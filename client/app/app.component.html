@@ -1,0 +1,11 @@
+ <script src="//cdn.auth0.com/js/lock/10.2.2/lock.min.js"></script>
+<nav class="navbar navbar-default">
+    <a routerLink="/home" routerLinkActive="active">Home</a>
+    <a routerLink="/feed">Feed</a>
+    <ul class="nav navbar-nav navbar-right" id="logButtons">
+    	<a routerLink="/profile">Profile</a>
+        <button class="btn btn-primary btn-margin logButtons" (click)="auth.login()" *ngIf="!auth.authenticated()">Log In</button>
+        <button class="btn btn-primary btn-margin logButtons" (click)="auth.logout()" *ngIf="auth.authenticated()">Log Out</button>
+     </ul>
+</nav>
+<router-outlet></router-outlet>
