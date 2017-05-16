@@ -19,16 +19,17 @@ var HomeComponent = (function () {
         this.searchService = searchService;
         this.fb = fb;
         this.auth = auth;
-        this.result = [];
+        this.artist = [];
+        this.album = [];
         this.searchField = new forms_1.FormControl();
         this.coolForm = fb.group({ search: this.searchField });
     }
     HomeComponent.prototype.search = function () {
         var _this = this;
         this.searchService.search(this.searchField.value)
-            .subscribe(function (result) {
-            _this.result = result;
-            console.log(result);
+            .subscribe(function (info) {
+            _this.artist = info.artists.items;
+            console.log(info.artists.items);
         });
     };
     HomeComponent.prototype.ngOnInit = function () { };

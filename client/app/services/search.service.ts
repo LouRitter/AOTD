@@ -9,7 +9,7 @@ export class SearchService {
 
   search(term: string) {
     return this.http
-            .get(`http://ws.audioscrobbler.com/2.0/?method=artist.search&artist=${term}&api_key=022acc7ed3ff0e94a5858ab2d6084760&format=json`)
-            .map((response) => response.json().results.artistmatches.artist)
+            .get(`https://api.spotify.com/v1/search?q=Muse&type=track,artist,album&market=US&limit=20&offset=0`)
+            .map((response) => response.json())
   }
 }

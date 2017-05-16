@@ -3,4 +3,3 @@ node_modules
 client/node_modules
 client/app/*.js
 client/app/*.js.map
-congig.js

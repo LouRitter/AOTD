@@ -13,7 +13,8 @@ import 'rxjs/Rx'
 })
 
 export class HomeComponent implements OnInit {
-  result: any = [];
+  artist: any = [];
+  album: any = [];
   searchField: FormControl;
   coolForm: FormGroup;
 
@@ -24,9 +25,9 @@ export class HomeComponent implements OnInit {
 
   search(){
       this.searchService.search(this.searchField.value)
-            .subscribe((result) => {
-                this.result = result;
-                console.log(result)
+            .subscribe((info) => {
+                this.artist = info.artists.items;
+                console.log(info.artists.items);
             });
   }
       ngOnInit(): void {}

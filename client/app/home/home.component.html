@@ -9,11 +9,11 @@
 		  <input (click)="search()" type="submit" value="Search For Artist"></form>
 
 
-
-        <div *ngFor ="let artist of result">
-         <h3> {{artist.name}}</h3>
-         <img src="{{artist.image[2]['#text']}}" />
-         </div>
+<div *ngFor="let item of artist">
+      <span>{{item?.name}}</span>
+    </div>
+        <!--  <img src="{{artist.image[2]['#text']}}" /> -->
+        
 <router-outlet></router-outlet>
 
 </div>
